@@ -2,6 +2,7 @@
 /* eslint-env browser */
 
 import React, { Component } from 'react';
+import LinearProgress from 'material-ui/LinearProgress';
 import JobsList from '../components/JobsList';
 
 export default class Jobs extends Component {
@@ -39,10 +40,11 @@ export default class Jobs extends Component {
   }
 
   render() {
+    console.log(this.props)
     return (
-      <div className="jobs-list">
+      <div className="jobs-list container">
         <div className="jobs-loading-animation">
-          <img src="spinner.svg" alt="spinner" className="spinner" />
+          <LinearProgress mode="indeterminate" />
           <p>
             Loading
             <span id="dot1">.</span>

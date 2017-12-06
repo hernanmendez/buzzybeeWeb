@@ -3,6 +3,8 @@
 
 import { renderToStaticMarkup } from 'react-dom/server';
 import React, { Component } from 'react';
+import TextField from 'material-ui/TextField';
+import RaisedButton from 'material-ui/RaisedButton';
 import DefaultStory from '../components/DefaultStory';
 import '../App.css';
 
@@ -113,8 +115,6 @@ export default class Story extends Component {
     const reading = !this.state.reading;
     this.setState({ reading });
 
-    $('.listBarDiv').toggle(1000);
-    $('.listBar').toggle(1000);
     $('.story-flex-wrapper').slideToggle(1000, () => {
       $('.aside').toggle(0);
       $('.story-flex-wrapper').slideToggle(1000);
@@ -175,15 +175,19 @@ export default class Story extends Component {
         </div>
 
         <div className="animation-hide container stories">
-          <div className={`Reading-Mode ${this.state.reading ? 'active' : ''}`} onClick={this.readingMode}>
-            <i className="fa fa-book"></i> Reading Mode <i className="fa fa-book"></i>
+          <div className="LBandRM">
+            <TextField
+              floatingLabelText="Find a story"
+              onChange={this.findStory}
+              value={this.state.listBar}
+              className="listBar"
+            />
+            <RaisedButton
+              label="Reading Mode"
+              onClick={this.readingMode}
+              className={`Reading-Mode ${this.state.reading ? 'active' : ''}`}
+            />
           </div>
-          <input
-            className="form-control listBar"
-            onChange={this.findStory}
-            value={this.state.listBar}
-            placeholder="find a story"
-          />
           <div className="LBDiv">
             <div className="LBStories">
               {

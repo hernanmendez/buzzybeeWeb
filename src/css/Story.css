@@ -3,6 +3,15 @@
   margin-top: 80px;
 }
 
+.LBandRM {
+  display: flex;
+  align-items: center;
+}
+
+.listBar {
+  flex: 1;
+}
+
 .LBDiv {
   position: relative;
 }
@@ -22,28 +31,6 @@
 
 .LBStory .mini-image {
   height: 50px;
-}
-
-.Reading-Mode {
-  margin: 0 auto;
-  width: 100%;
-  color: white;
-  border: 0;
-  border-radius: 0;
-  background-color: #F58C54;
-  font-size: 17px;
-  text-align: center;
-  padding: 10px 0;
-  transition: all 1s;
-  margin-bottom: 5px;
-  cursor: pointer;
-}
-
-.Reading-Mode.active {
-  width: 40%;
-  font-size: 16px;
-  padding: 3px 0;
-  margin-bottom: 8px;
 }
 
 .story-flex-wrapper {
@@ -97,10 +84,6 @@
   display: block;
 }
 
-.story-box span {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 .narrator-pic {
   height: 70;
   width: 70%;
@@ -127,6 +110,12 @@
   }
   .aside {
     width: 100%;
+  }
+  .Reading-Mode {
+    display: none !important;
+  }
+  .Reading-Mode.active {
+    display: inline-block !important;
   }
   .sidebar-grid {
     overflow-y: hidden;
